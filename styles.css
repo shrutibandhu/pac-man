@@ -1,0 +1,204 @@
+/* Load Press Start font */
+@font-face {
+    font-family: 'PressStart';
+    src: url('fonts/prstartk.ttf');
+}
+
+body {
+    background: black;
+    color: white;
+    font-family: 'PressStart', monospace;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 12px;
+}
+
+/* NAVIGATION */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: color .5s ease;
+}
+
+nav a:hover {
+    color: #FFD300; /* Pac-Man yellow */
+}
+
+/* SECTION DIVIDER */
+section {
+    padding: 20px 0;
+    position: relative;
+}
+
+#scores p {
+    font-size: 30px;
+    color: #FFD300;
+}
+
+section:after {
+    content: "";
+    display: block;
+    width: 80%;
+    margin: 40px auto 0;
+    border-bottom: 2px solid #FFD300;
+}
+
+/* INSERT COIN BLINK */
+h2 {
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+#home h2 {
+    animation: blink 2s infinite;
+}
+
+#home div img {
+    width: 50px;
+    height: 50px;
+}
+
+#home div img:first-child {
+    transform: scaleX(-1);
+}
+
+#how div img {
+    width: 50px;
+    height: 50px;
+}
+
+#scores h2 {
+    animation: blink 2s infinite;
+}
+
+#scores table {
+    padding-left: 35%;
+}
+
+#how h2 {
+    animation: blink 2s infinite;
+}
+#how div p {
+    padding-left: 100px;    
+    padding-right: 100px;
+}
+#players h2 {
+    animation: blink 2s infinite;
+}
+
+#players ul li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#players div {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#players div p:nth-child(1) {
+    color: red
+}
+
+#players div p:nth-child(2) {
+    color: pink
+}
+
+#players div p:nth-child(3) {
+    color: cyan
+}
+
+#players div p:nth-child(4) {
+    color: orange
+}
+
+#players div p img {
+    transform: scaleX(-1);
+}
+
+#players div div div {
+    float: right;
+}
+
+#players img {
+    width: 25px;
+    height: 25px;
+    padding-right: 10px;
+}
+
+.yellow-square {
+   width: 5px;
+   height: 5px;
+   background-color: yellow;
+}
+
+.small-yellow-square {
+   width: .1px;
+   height: .1px;
+   background-color: yellow;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* ANIMATION TRACK */
+.animation-track {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    animation: moveLeft 6s linear infinite;
+}
+
+.animation-track.reverse {
+    animation: moveRight 8s linear infinite;
+}
+
+@keyframes moveLeft {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-120%); }
+}
+
+@keyframes moveRight {
+    0% { transform: translateX(-120%); }
+    100% { transform: translateX(100%); }
+}
+
+/* HIGH SCORES nth-child */
+#scores tr:nth-child(1) { color: white; }
+#scores tr:nth-child(4n + 2) { color: orange; }
+#scores tr:nth-child(4n + 3) { color: red; }
+#scores tr:nth-child(4n + 4) { color: cyan; }
+#scores tr:nth-child(4n + 5) { color: pink; }
+
+#scores table tr td {
+    padding-right: 80px;
+}
+#scores table tr th {
+    padding-right: 80px;
+    padding-bottom: 20px;
+}
+/* HOW TO PLAY first-line */
+.instructions::first-line {
+    color: yellow;
+    text-transform: uppercase;
+}
+
+/* PLAYERS nth-of-type */
+.characters li:nth-of-type(1) { color: red; }
+.characters li:nth-of-type(2) { color: pink; }
+.characters li:nth-of-type(3) { color: cyan; }
+.characters li:nth-of-type(4) { color: orange; }
